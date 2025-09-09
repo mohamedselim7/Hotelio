@@ -35,7 +35,7 @@
                                 <ul id="navigation">
                                     <li><a href="{{ url('/') }}">Home</a></li>
                                     <li><a href="{{ url('/Rooms') }}">Rooms</a></li>
-                                    <li><a href="{{ url('/services') }}">Service</a></li>
+                                    <li><a href="{{ url('/Services') }}">Service</a></li>
                                     <li><a href="{{ url('/blog') }}">Blog</a>
                                         <ul class="submenu">
                                             <li><a href="{{ url('/blog') }}">Blog</a></li>
@@ -48,7 +48,7 @@
                                             <li><a href="{{ url('/elements') }}">Element</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                                    <li><a href="{{ url('/Contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>

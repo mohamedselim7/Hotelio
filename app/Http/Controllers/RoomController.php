@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
-
+use App\Models\Service;
 class RoomController extends Controller
 {
     public function RoomsPage() {
@@ -44,4 +44,25 @@ class RoomController extends Controller
         $room->delete();
         return redirect()->back();
     }
+    public function AddServicePage(){
+        return view('AddService');
+    }
+    public function AddService(Request $request){
+        $request->validate([
+            'NameOfService' => 'required|string|max:255',
+            'DescriptionOfService' => 'required|string',
+            'NameOfServiceProvided' => 'required|string',
+        ]);
+        $service = new Service();
+        $service->NameOfService = $request->input('NameOfService');
+        $service->DescriptionOfService = $request->input('DescriptionOfService');
+        $service->NameOfServiceProvided = $request->input('NameOfServiceProvided');
+         if ($request->hasFile('image')) {
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('uploads/services'), $imageName);
+        $service->imagepath = 'uploads/services/' . $imageName; 
+}
+        $service->save();
+        return redirect()->back();
+}
 }

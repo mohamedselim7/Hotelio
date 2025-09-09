@@ -14,3 +14,7 @@ Route::get('/DeleteRoom/{id}',[RoomController::class,'DeleteRoom']);
 //contact
 Route::get('/Contact', [FirstController::class,'ContactPage']);
 Route::post('/Contact', [FirstController::class,'ContactUs']);
+//services
+Route::get('/Services', [FirstController::class,'ServicesPage']);
+Route::get('/AddServices',[RoomController::class,'AddServicePage']);
+Route::post('/AddServices',[RoomController::class,'AddService']);

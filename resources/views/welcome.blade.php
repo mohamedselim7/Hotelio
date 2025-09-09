@@ -59,8 +59,8 @@
                                 <nav>
                                     <ul id="navigation">                                                                                                                                     
                                         <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="services.html">Service</a></li>
+                                        <li><a href="{{ url('/Rooms') }}">Rooms</a></li>
+                                        <li><a href="{{ url('/Services') }}">Service</a></li>
                                         <li><a href="blog.html">Blog</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>
@@ -73,7 +73,7 @@
                                                 <li><a href="elements.html">Element</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{ url('/Contact') }}">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -84,14 +84,7 @@
                                 <a href="#" class="btn btn1 d-none d-lg-block ">Book Online</a>
                             </div>
                         </div>
-                        <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-       </div>
+        
         <!-- Header End -->
     </header>
     <main>
@@ -251,11 +244,11 @@
                    </div>
                     <div class=" col-xl-4 col-lg-4">
                         <div class="customer-caption">
-                            <span>About our company</span>
+                            <span>About Our Hotel</span>
                             <h2>Make the customer the hero of your story</h2>
                             <div class="caption-details">
-                                <p class="pera-dtails">Lorem ipsum dolor sit amet, consectetur adipisic- ing elit, sed do eiusmod tempor inc. </p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>
+                                <p class="pera-dtails"></p>
+                                <p>Welcome to Hotelio, where comfort meets excellence. Our hotel offers a perfect blend of modern amenities and warm hospitality to make your stay unforgettable. Whether you're here for business or leisure, our dedicated team ensures every detail is taken care of, from cozy rooms and fine dining to personalized services. Experience a stay designed with your comfort in mind, right at the heart of the city. </p>
                                 <a href="#" class="btn more-btn1">Learn More <i class="ti-angle-right"></i> </a>
                             </div>
                         </div>
