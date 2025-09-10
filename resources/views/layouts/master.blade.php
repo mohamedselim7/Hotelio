@@ -36,31 +36,15 @@
                                     <li><a href="{{ url('/') }}">Home</a></li>
                                     <li><a href="{{ url('/Rooms') }}">Rooms</a></li>
                                     <li><a href="{{ url('/Services') }}">Service</a></li>
-                                    <li><a href="{{ url('/blog') }}">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="{{ url('/blog') }}">Blog</a></li>
-                                            <li><a href="{{ url('/blog-details') }}">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="submenu">
-                                            
-                                            <li><a href="{{ url('/elements') }}">Element</a></li>
-                                        </ul>
-                                    </li>
+                                    
+                                   
                                     <li><a href="{{ url('/Contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
 
-                    <!-- Header Button -->
-                    <div class="col-xl-2 col-lg-2">
-                        <div class="header-btn">
-                            <a href="#" class="btn btn1 d-none d-lg-block">Book Online</a>
-                        </div>
-                    </div>
-
+         
                     <!-- Mobile Menu -->
                     <div class="col-12">
                         <div class="mobile_menu d-block d-lg-none"></div>

@@ -6,8 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Appointment;
 use App\Models\Service;
+use App\Models\Rate;
 class FirstController extends Controller
 {
+    function HomePage() {
+    $rooms = Room::all();
+    $services = Service::all();
+    $rate = Rate::all();
+    return view('welcome',['rooms' => $rooms,'services' => $services,'rate' => $rate]);
+}
     public function ContactPage() {
         return view('Hotel.Contact');
     }
@@ -28,6 +35,7 @@ class FirstController extends Controller
 }
     public function ServicesPage() {
         $services = Service::all();
-        return view('Hotel.Services',['services' => $services]);
+        $rate = Rate::all();
+        return view('Hotel.Services',['services' => $services,'rate' => $rate]);
 }
 }
