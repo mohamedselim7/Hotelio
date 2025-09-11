@@ -41,10 +41,10 @@
 
 </div>
 
-<!-- CSS -->
+\
 <style>
 .upload-title {
-    font-family: 'Poppins', sans-serif; /* خط عصري */
+    font-family: 'Poppins', sans-serif; \
     font-size: 2rem;
     font-weight: 700;
     color: #ff6b6b; /* لون جذاب */

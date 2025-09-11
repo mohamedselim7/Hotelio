@@ -37,4 +37,6 @@ Route::get('/AddRoom',[DashboardController::class,'AddRoomPage'])->middleware('C
 Route::get('/AddServices',[DashboardController::class,'AddServicePage'])->middleware('CheckRolle:admin');
 Route::get('/Users',[DashboardController::class,'UsersPage'])->middleware('CheckRolle:admin');
 Route::get('/Opinions',[DashboardController::class,'OpininosPage'])->middleware('CheckRolle:admin');
+Route::get('/Appointments',[DashboardController::class,'AppointmentsPage'])->middleware('CheckRolle:admin');
+
 

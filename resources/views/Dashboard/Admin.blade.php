@@ -11,7 +11,7 @@
         }
         .sidebar {
             min-height: 100vh;
-            background: #1e293b; /* لون داكن */
+            background: #1e293b; 
             color: #fff;
             transition: all 0.3s ease;
         }
@@ -46,8 +46,9 @@
             <div class="brand">🛠️ Dashboard</div>
             <a href="{{ url('/Opinions') }}" class="active">🏠 Opinions</a>
             <a href="{{ url('/AddServices') }}">🛎️ Add Services</a>
+            <a href="{{ url('/Appointments') }}">📅 Appointments</a>
 
-            {{-- بدل Media حطينا لينكات مباشرة --}}
+            
             <a href="{{ url('/Addvideo&photo') }}">📸 Photos & 🎬 Videos</a>
             
 

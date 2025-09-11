@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Rate;
+use App\Models\Appointment;
 class DashboardController extends Controller
 {
     public function DashboradPage(){
@@ -17,7 +18,7 @@ class DashboardController extends Controller
         return view('Dashboard.AddRoom');
     }
     public function AddServicePage() {
-        return view('Dashboard.Services');
+        return view('Dashboard.AddServices');
     }
     public function UsersPage() {
         $User = User::all();
@@ -26,5 +27,9 @@ class DashboardController extends Controller
     public function OpininosPage() {
         $rate = Rate::all();
         return view('Dashboard.Opinions',['rate' => $rate]);
+    }
+    public function AppointmentsPage() {
+        $appointment = Appointment::all();
+        return view('Dashboard.Appointments',['appointment' => $appointment]);
     }
 }

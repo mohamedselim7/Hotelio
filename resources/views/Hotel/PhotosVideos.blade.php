@@ -44,7 +44,7 @@
 
 </div>
 
-{{-- CSS للتنسيق والحركات --}}
+
 <style>
 .gallery-item {
     position: relative;
