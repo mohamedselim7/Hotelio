@@ -57,9 +57,9 @@ class RoomController extends Controller
         $service->NameOfService = $request->input('NameOfService');
         $service->DescriptionOfService = $request->input('DescriptionOfService');
         $service->NameOfServiceProvided = $request->input('NameOfServiceProvided');
-         if ($request->hasFile('image')) {
-        $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('uploads/services'), $imageName);
+        if ($request->hasFile('imagepath')) {
+        $imageName = time() . '.' . $request->file('imagepath')->extension();
+        $request->file('imagepath')->move(public_path('uploads/services'), $imageName);
         $service->imagepath = 'uploads/services/' . $imageName; 
 }
         $service->save();

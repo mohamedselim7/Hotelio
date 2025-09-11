@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
+
 <body>
 
     <!-- Header -->
@@ -24,7 +26,8 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo">
-                            <a href="{{ url('/') }}"><img src="{{ asset('assets/img/logo/logo.png') }}" alt=""></a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('assets/img/logo/logo.png') }}"
+                                    alt=""></a>
                         </div>
                     </div>
 
@@ -36,15 +39,45 @@
                                     <li><a href="{{ url('/') }}">Home</a></li>
                                     <li><a href="{{ url('/Rooms') }}">Rooms</a></li>
                                     <li><a href="{{ url('/Services') }}">Service</a></li>
-                                    
-                                   
                                     <li><a href="{{ url('/Contact') }}">Contact</a></li>
+                                     <li><a href="{{ url('/PhotosVideos') }}">Photos & Videos</a></li>
+                                         @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li>
+                                <a  href="#" >
+                                    {{ Auth::user()->name }}
+                                </a>
+                            </li>
+                            <li>
+                                    <a  href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                            </li>
+                        @endguest
                                 </ul>
+                                
                             </nav>
                         </div>
                     </div>
 
-         
+
                     <!-- Mobile Menu -->
                     <div class="col-12">
                         <div class="mobile_menu d-block d-lg-none"></div>
@@ -64,7 +97,8 @@
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                     <div class="single-footer-caption mb-30">
                         <div class="footer-logo">
-                            <a href="{{ url('/') }}"><img src="{{ asset('assets/img/logo/logo2_footer.png') }}" alt=""></a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('assets/img/logo/logo2_footer.png') }}"
+                                    alt=""></a>
                         </div>
                         <div class="footer-social footer-social2">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -74,7 +108,12 @@
                         </div>
                         <div class="footer-pera">
                             <p>
-                                Copyright ©<script>document.write(new Date().getFullYear());</script> 2025 All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                Copyright ©
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> 2025 All rights reserved | This template is made with <i
+                                    class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                    target="_blank">Colorlib</a>
                             </p>
                         </div>
                     </div>
@@ -122,11 +161,18 @@
                             <!-- Newsletter Form -->
                             <div class="footer-form">
                                 <div id="mc_embed_signup">
-                                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
-                                        <input type="email" name="EMAIL" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                                    <form target="_blank"
+                                        action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                        method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                        <input type="email" name="EMAIL" id="newsletter-form-email"
+                                            placeholder="Email Address" class="placeholder hide-on-focus"
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = ' Email Address '">
                                         <div class="form-icon">
-                                            <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
-                                                <img src="{{ asset('assets/img/logo/form-iocn.jpg') }}" alt="">
+                                            <button type="submit" name="submit" id="newsletter-submit"
+                                                class="email_icon newsletter-submit button-contactForm">
+                                                <img src="{{ asset('assets/img/logo/form-iocn.jpg') }}"
+                                                    alt="">
                                             </button>
                                         </div>
                                         <div class="mt-10 info"></div>
@@ -148,4 +194,5 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
+
 </html>

@@ -1,6 +1,4 @@
-@extends('layouts.master')
 
-@section('content')
     <div class="single-slider hero-overly slider-height2 d-flex align-items-center"
         style="background-image: url('{{ asset('assets/img/hero/contact_hero.jpg') }}');">
         <div class="container">
@@ -56,4 +54,4 @@
             </div>
         </div>
     </div>
-@endsection
+

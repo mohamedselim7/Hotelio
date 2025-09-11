@@ -54,34 +54,32 @@
                     <div class="h1-testimonial-active">
                         @foreach ($rate as $item)
                             <!-- Single Testimonial -->
-                            <div class="single-testimonial pt-65">
-                                <!-- Testimonial Title -->
-                                <div class="font-back-tittle mb-105">
-                                    <div class="archivment-front">
-                                        <img src="{{ asset($item->imagepath) }}" alt="{{ $item->name }}"
-                                            class="rounded-circle" width="80" height="80"
-                                            style="object-fit: cover;">
-                                    </div>
-                                    <h3 class="archivment-back">Testimonial</h3>
+                            <div class="single-testimonial pt-65" style="background: #f8f9fa; border-radius: 15px; padding: 30px; margin-bottom: 30px;">
+                                
+                                <!-- Client Info -->
+                                <div class="d-flex flex-column align-items-center mb-3">
+                                    <img src="{{ asset($item->imagepath ?? 'assets/img/default_user.png') }}" 
+                                         alt="{{ $item->name }}" class="rounded-circle mb-2" width="80" height="80" style="object-fit: cover; border: 2px solid #3b82f6;">
+                                    <h5 class="mb-0">{{ $item->name }}</h5>
+                                    @if($item->TypeOfClient)
+                                        <small class="text-muted">{{ $item->TypeOfClient }}</small>
+                                    @endif
                                 </div>
 
                                 <!-- Testimonial Content -->
-                                <div class="testimonial-caption text-center">
-                                    <p>{{ $item->YourOpinion }}</p>
+                                <p class="text-center text-secondary" style="font-size: 1rem; line-height: 1.5;">
+                                    "{{ $item->YourOpinion }}"
+                                </p>
 
-                                    <!-- Rating -->
-                                    <div class="testimonial-ratting">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-
-                                    <!-- Client Info -->
-                                    <div class="rattiong-caption">
-                                        <span>{{ $item->name }}, <span>{{ $item->TypeOfClient }}</span></span>
-                                    </div>
+                                <!-- Rating -->
+                                <div class="text-center" style="color: #f59e0b; font-size: 1rem;">
+                                    @for ($i = 0; $i < 5; $i++)
+                                        @if($i < $item->rating ?? 5)
+                                            <i class="fas fa-star"></i>
+                                        @else
+                                            <i class="far fa-star"></i>
+                                        @endif
+                                    @endfor
                                 </div>
                             </div>
                         @endforeach

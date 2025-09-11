@@ -29,7 +29,7 @@
                         <div class="col-sm-6 mb-3">
                             <div class="form-group">
                                 <input class="form-control" name="TypeOfClient" id="TypeOfClient" type="text"
-                                    placeholder="Enter TypeOfClient" onfocus="this.placeholder=''"
+                                    placeholder="Enter Type Of Client" onfocus="this.placeholder=''"
                                     onblur="this.placeholder='Enter Name Of service'">
                             </div>
                         </div>

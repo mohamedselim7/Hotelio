@@ -56,12 +56,41 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">                                                                                                                                     
-                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="{{ url('/') }}">Home</a></li>
                                         <li><a href="{{ url('/Rooms') }}">Rooms</a></li>
                                         <li><a href="{{ url('/Services') }}">Services</a></li>
                                         <li><a href="{{ url('/Contact') }}">Contact</a></li>
                                         <li><a href="{{ url('/PhotosVideos') }}">Photos & Videos</a></li>
+                                               @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li>
+                                <a  href="#" >
+                                    {{ Auth::user()->name }}
+                                </a>
+                            </li>
+                            <li>
+                                    <a  href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                            </li>
+                        @endguest
                                     </ul>
                                 </nav>
                             </div>
@@ -273,112 +302,7 @@
         <!-- Testimonial End -->
 
         <!-- Blog Start -->
-        <section class="blog-area blog-padding">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-8">
-                        <div class="font-back-tittle mb-50">
-                            <div class="archivment-front">
-                                <h3>Our Blog</h3>
-                            </div>
-                            <h3 class="archivment-back">Recent News</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-blog mb-30">
-                            <div class="blog-img">
-                                <a href="single-blog.html"><img src="assets/img/our_blog/blog-img1.jpg" alt="Blog post"></a>
-                            </div>
-                            <div class="blog-caption">
-                                <div class="blog-cap-top d-flex justify-content-between mb-40">
-                                    <span>news</span>
-                                    <ul>
-                                        <li>by<a href="#"> Jhon Guru</a></li>
-                                    </ul>
-                                </div>
-                                <div class="blog-cap-mid">
-                                    <p><a href="single-blog.html">5 Simple Tricks for Getting Stellar Hotel Service Wherever You Are</a></p>
-                                </div>
-                                <div class="blog-cap-bottom d-flex justify-content-between">
-                                    <span>Feb 28, 2020</span>
-                                    <span><img src="assets/img/our_blog/blog-comments-icon.jpg" alt="Comments icon">3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-blog mb-30">
-                            <div class="blog-img">
-                                <a href="single-blog.html"><img src="assets/img/our_blog/blog-img2.jpg" alt="Blog post"></a>
-                            </div>
-                            <div class="blog-caption">
-                                <div class="blog-cap-top d-flex justify-content-between mb-40">
-                                    <span>news</span>
-                                    <ul>
-                                        <li>by<a href="#"> Jhon Guru</a></li>
-                                    </ul>
-                                </div>
-                                <div class="blog-cap-mid">
-                                    <p><a href="single-blog.html">5 Simple Tricks for Getting Stellar Hotel Service Wherever You Are</a></p>
-                                </div>
-                                <div class="blog-cap-bottom d-flex justify-content-between">
-                                    <span>Feb 28, 2020</span>
-                                    <span><img src="assets/img/our_blog/blog-comments-icon.jpg" alt="Comments icon">3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-blog mb-30">
-                            <div class="blog-img">
-                                <a href="single-blog.html"><img src="assets/img/our_blog/blog-img3.jpg" alt="Blog post"></a>
-                            </div>
-                            <div class="blog-caption">
-                                <div class="blog-cap-top d-flex justify-content-between mb-40">
-                                    <span>news</span>
-                                    <ul>
-                                        <li>by<a href="#"> Jhon Guru</a></li>
-                                    </ul>
-                                </div>
-                                <div class="blog-cap-mid">
-                                    <p><a href="single-blog.html">5 Simple Tricks for Getting Stellar Hotel Service Wherever You Are</a></p>
-                                </div>
-                                <div class="blog-cap-bottom d-flex justify-content-between">
-                                    <span>Feb 28, 2020</span>
-                                    <span><img src="assets/img/our_blog/blog-comments-icon.jpg" alt="Comments icon">3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Blog End -->
-
-        <!-- Gallery img Start-->
-        <section class="gallery-area fix">
-            <div class="container-fluid p-0">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="gallery-active owl-carousel">
-                            <div class="gallery-img">
-                                <a href="#"><img src="assets/img/gallery/gallery1.jpg" alt="Gallery image"></a>
-                            </div>
-                            <div class="gallery-img">
-                                <a href="#"><img src="assets/img/gallery/gallery2.jpg" alt="Gallery image"></a>
-                            </div>
-                            <div class="gallery-img">
-                                <a href="#"><img src="assets/img/gallery/gallery3.jpg" alt="Gallery image"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Gallery img End-->
-    </main>
+        
 
     <footer>
         <!-- Footer Start-->
